@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#4cca63</color>
-    <color name="colorPrimaryDark">#777</color>
+    <color name="colorPrimaryDark">#d7d5d5</color>
     <color name="colorAccent">#FF4081</color>
     <color name="wanring">#f98116</color>
     <color name="background">#777</color>

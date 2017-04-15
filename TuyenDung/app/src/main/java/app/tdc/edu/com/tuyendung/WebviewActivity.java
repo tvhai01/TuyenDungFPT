@@ -10,6 +10,7 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -20,7 +21,7 @@ public class WebviewActivity extends Activity {
     WebView webview = null;
     MyAdapter adapter;
     String link = "";
-    Button imgBack;
+    ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class WebviewActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.detail_main);
 
-        imgBack = (Button) findViewById(R.id.imgBack);
+        imgBack = (ImageView) findViewById(R.id.imgBack);
         webview = (WebView) findViewById(R.id.webview);
         imgBack.setOnClickListener(new View.OnClickListener() {
 

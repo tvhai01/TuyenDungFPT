@@ -2,6 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundmain"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,6 +18,8 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -39,17 +46,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/duongvien_goctron"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:src="@drawable/comme" />
 
             <AutoCompleteTextView
+                android:layout_marginTop="8dp"
                 android:id="@+id/editChucDanh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,23 +74,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/duongvien_goctron"
             android:orientation="horizontal">
             //tên
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="43dp"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:paddingLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/list" />
 
             <AutoCompleteTextView
+                android:background="@color/form"
                 android:id="@+id/edtNganhNghe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nganhnghe"
                 android:paddingTop="10dp"
+                android:inputType="textPersonName"
                 android:textSize="23dp"
                 android:textStyle="italic|normal" />
         </LinearLayout>
@@ -88,31 +105,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/duongvien_goctron"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:src="@drawable/maps" />
             //tên thành
 
             <AutoCompleteTextView
+                android:background="@color/form"
                 android:id="@+id/edtDiaDiem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/diadiem"
                 android:paddingTop="10dp"
+                android:inputType="textPersonName"
                 android:textSize="23dp"
                 android:textStyle="italic|normal" />
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/btnSearch"
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/searchbtn"
-            android:text="Search" />
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_select"
+                android:textColor="@color/background"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:onClick="disconnectButtonClicked"
+                android:text="Search" />
+        </LinearLayout>
 
 
     </LinearLayout>

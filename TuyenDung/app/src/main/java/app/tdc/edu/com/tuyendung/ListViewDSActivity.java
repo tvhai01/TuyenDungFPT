@@ -2,13 +2,16 @@ package app.tdc.edu.com.tuyendung;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import org.jsoup.Jsoup;
@@ -29,7 +32,7 @@ public class ListViewDSActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button imgBack = (Button) findViewById(R.id.btnBack);
+        ImageView imgBack = (ImageView) findViewById(R.id.btnBack);
         lvDanhSach = (ListView) findViewById(R.id.lvdanhsach);
         getAndUpdateLink();
         new _JSOUP().execute();
@@ -38,7 +41,9 @@ public class ListViewDSActivity extends Activity {
 
             @Override
             public void onClick(View arg0) { // TODO Auto-generated method stub
-                onBackPressed();
+                Intent intent = new Intent(ListViewDSActivity.this,SearchActiviry.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -108,6 +113,7 @@ public class ListViewDSActivity extends Activity {
             return questions;
             // TODO Auto-generated method stub
         }
+
 
         @Override
         protected void onPostExecute(ArrayList<ThuocTinh> result) {

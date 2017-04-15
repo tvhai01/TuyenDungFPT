@@ -1,17 +1,24 @@
 package app.tdc.edu.com.tuyendung;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,18 +41,26 @@ public class SearchActiviry extends Activity{
     private Bundle mappings;
     private HashMap<String, String> hmViecLam;
     private HashMap<String, String> hmThanhPho;
-    ImageView btnSearch;
     AutoCompleteTextView edtChucDanh, edtTenViecLam , edtTenTP;
-
+    TextView txtNameOne,txtNameTwo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_main);
 
-        btnSearch = (ImageView)findViewById(R.id.btnSearch);
+        Button btnSearch = (Button)findViewById(R.id.btnSearch);
         final AutoCompleteTextView edtTenViecLam = (AutoCompleteTextView) findViewById(R.id.edtNganhNghe);
         final AutoCompleteTextView edtChucDanh = (AutoCompleteTextView) findViewById(R.id.editChucDanh);
         final AutoCompleteTextView edtTenTP = (AutoCompleteTextView) findViewById(R.id.edtDiaDiem);
+
+        txtNameOne = (TextView) findViewById(R.id.textView6);
+        txtNameTwo = (TextView) findViewById(R.id.textView7);
+
+        Animation slideright = AnimationUtils.loadAnimation(SearchActiviry.this,R.anim.slider_right);
+        Animation slideleft = AnimationUtils.loadAnimation(SearchActiviry.this,R.anim.slider_left);
+
+        txtNameTwo.startAnimation(slideright);
+        txtNameOne.startAnimation(slideleft);
 
         edtTenViecLam
                 .setOnEditorActionListener(new EditText.OnEditorActionListener() {
@@ -153,5 +168,41 @@ public class SearchActiviry extends Activity{
             }
 
         });
+    }
+
+    public void onBackPressed(){
+        outApp();
+    }
+    public void onSuperBackPressed(){
+        super.onBackPressed();
+    }
+
+    public void outApp(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Exit");
+        builder.setMessage("Are you sure?");
+
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing but close the dialog
+                finish();
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
