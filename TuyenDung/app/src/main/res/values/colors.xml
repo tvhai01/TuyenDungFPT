@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4cca63</color>
+    <color name="colorPrimaryDark">#777</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="wanring">#f98116</color>
+    <color name="background">#777</color>
+    <color name="form">#fff</color>
+    <color name="btn">#f7941d</color>
+    <color name="hot">#ff1919</color>
+
+</resources>
