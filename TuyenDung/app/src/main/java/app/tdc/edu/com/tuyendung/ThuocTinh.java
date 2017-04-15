@@ -7,35 +7,6 @@ package app.tdc.edu.com.tuyendung;
 public class ThuocTinh {
     private String tieude, congty, diadiem,luong, ngaydang,link ;
 
-    public String getLuong() {
-        return luong;
-    }
-
-    public void setLuong(String luong) {
-        this.luong = luong;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public ThuocTinh(String tieude1, String s, String tieude, String congty, String diadiem, String luong) {
-        this.tieude = tieude;
-        this.congty = congty;
-        this.diadiem = diadiem;
-        this.luong = luong;
-        this.ngaydang = ngaydang;
-        this.link = link;
-
-
-    }
-
-
-
     public String getTieude() {
         return tieude;
     }
@@ -60,6 +31,14 @@ public class ThuocTinh {
         this.diadiem = diadiem;
     }
 
+    public String getLuong() {
+        return luong;
+    }
+
+    public void setLuong(String luong) {
+        this.luong = luong;
+    }
+
     public String getNgaydang() {
         return ngaydang;
     }
@@ -68,9 +47,12 @@ public class ThuocTinh {
         this.ngaydang = ngaydang;
     }
 
-    public String getStrLink() {
-        // TODO Auto-generated method stub
-        return null;
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     @Override
@@ -83,6 +65,14 @@ public class ThuocTinh {
                 ", ngaydang='" + ngaydang + '\'' +
                 ", link='" + link + '\'' +
                 '}';
+    }
+    public ThuocTinh(String tieude, String congty, String diadiem, String luong, String ngaydang, String link) {
+        this.tieude = tieude;
+        this.congty = congty;
+        this.diadiem = diadiem;
+        this.luong = luong;
+        this.ngaydang = ngaydang;
+        this.link = link;
     }
 
 //    public ThuocTinh get(int position) {

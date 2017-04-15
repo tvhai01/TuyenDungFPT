@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +31,7 @@ public class ListViewDSActivity extends Activity {
         setContentView(R.layout.activity_main);
         Button imgBack = (Button) findViewById(R.id.btnBack);
         lvDanhSach = (ListView) findViewById(R.id.lvdanhsach);
+        getAndUpdateLink();
         new _JSOUP().execute();
 
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +42,21 @@ public class ListViewDSActivity extends Activity {
             }
         });
 
+    }
+    void getAndUpdateLink() {
+        Intent intent = getIntent();
+        // Log.d("intent", "intent " + intent);
+        if (intent != null) {
+            Bundle bundle = intent.getBundleExtra("data");
+            Log.d("aaa", bundle + "");
+            if (bundle != null) {
+                Link link = new Link(bundle.getString("link"));
+                Log.d("du lieu da lay", link + "");
+                url = link + "";
+            } else {
+                arrlink.clear();
+            }
+        }
     }
     private class _JSOUP extends AsyncTask<Void, Integer, ArrayList<ThuocTinh>> {
         ProgressDialog dialog;
@@ -65,10 +80,8 @@ public class ListViewDSActivity extends Activity {
             try {
                 // Log.d("da vao", "da vao toi day");
                 Document doccument = Jsoup.connect(url).get();
-                Log.d("aaa", doccument + "");
-                Elements logo = doccument.select("span.logoJobs img");
-                Elements tieude = doccument.select("h3.job a");
-                Log.d("aaa", tieude + "");
+                Elements tieude = doccument.select("h3.job");
+//                Log.d("aaa", tieude + "");
                 Elements tencty = doccument.select("p.namecom");
                 Elements diadiem = doccument.select("p.location");
                 Elements luong = doccument.select("p.salary");
