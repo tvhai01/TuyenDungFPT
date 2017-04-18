@@ -15,6 +15,24 @@ import app.tdc.edu.com.tuyendung.R;
 import app.tdc.edu.com.tuyendung.SearchActiviry;
 
 
+
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.media.MediaPlayer;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
 public class SplashScreenActivity extends Activity {
 
     Handler handler =  new Handler();

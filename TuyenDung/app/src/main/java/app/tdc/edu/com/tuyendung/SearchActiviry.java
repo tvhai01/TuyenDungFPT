@@ -43,6 +43,7 @@ public class SearchActiviry extends Activity{
     private HashMap<String, String> hmThanhPho;
     AutoCompleteTextView edtChucDanh, edtTenViecLam , edtTenTP;
     TextView txtNameOne,txtNameTwo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
