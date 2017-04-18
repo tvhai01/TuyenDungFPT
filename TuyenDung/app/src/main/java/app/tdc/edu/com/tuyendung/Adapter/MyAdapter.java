@@ -1,16 +1,16 @@
-package app.tdc.edu.com.tuyendung;
+package app.tdc.edu.com.tuyendung.Adapter;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import app.tdc.edu.com.tuyendung.Object.ThuocTinh;
+import app.tdc.edu.com.tuyendung.R;
 
 /**
  * Created by Việt Hải on 4/11/2017.

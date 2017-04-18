@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import app.tdc.edu.com.tuyendung.Adapter.MyAdapter;
 
 /**
  * Created by Việt Hải on 4/11/2017.

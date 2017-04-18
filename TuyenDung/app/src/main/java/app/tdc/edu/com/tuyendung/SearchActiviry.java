@@ -15,13 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import app.tdc.edu.com.tuyendung.Adapter.MyAdapter;
+import app.tdc.edu.com.tuyendung.Object.Link;
 
 /**
  * Created by Việt Hải on 4/12/2017.

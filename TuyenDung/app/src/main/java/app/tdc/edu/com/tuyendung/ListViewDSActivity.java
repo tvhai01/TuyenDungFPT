@@ -2,15 +2,12 @@ package app.tdc.edu.com.tuyendung;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -19,6 +16,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+
+import app.tdc.edu.com.tuyendung.Adapter.MyAdapter;
+import app.tdc.edu.com.tuyendung.Object.Link;
+import app.tdc.edu.com.tuyendung.Object.ThuocTinh;
 
 public class ListViewDSActivity extends Activity {
     // URL Address
