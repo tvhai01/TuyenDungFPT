@@ -10,18 +10,19 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import app.tdc.edu.com.tuyendung.Object.ThuocTinh;
+import app.tdc.edu.com.tuyendung.Object.ThuocTinhHot;
 import app.tdc.edu.com.tuyendung.R;
 
 /**
  * Created by Việt Hải on 4/11/2017.
  */
 
-public class MyAdapter extends ArrayAdapter {
+public class MyAdapterHot extends ArrayAdapter {
     Activity context = null;
     int itemlayout;
-    ArrayList<ThuocTinh> question = null;
+    ArrayList<ThuocTinhHot> question = null;
 
-    public MyAdapter(Activity context, int resource, ArrayList<ThuocTinh> objects) {
+    public MyAdapterHot(Activity context, int resource, ArrayList<ThuocTinhHot> objects) {
         super(context, resource, objects);
         // TODO Auto-generated constructor stub
         this.context = context;
@@ -39,14 +40,7 @@ public class MyAdapter extends ArrayAdapter {
                 .findViewById(R.id.txtTieuDe);
         TextView txtTenCTy = (TextView) convertView
                 .findViewById(R.id.txtCongTy);
-        TextView txtTenTP = (TextView) convertView
-                .findViewById(R.id.txtDiaDiem);
-        TextView txtLuong = (TextView) convertView
-                .findViewById(R.id.txtLuong);
-        TextView txtDate = (TextView) convertView
-                .findViewById(R.id.txtThoiGian);
-
-        ThuocTinh jobs = question.get(position);
+        ThuocTinhHot jobs = question.get(position);
 
         if (jobs != null) {
 
@@ -54,9 +48,6 @@ public class MyAdapter extends ArrayAdapter {
 
             txtTenCV.setText(jobs.getTieude());
             txtTenCTy.setText(jobs.getCongty());
-            txtTenTP.setText(jobs.getDiadiem());
-            txtLuong.setText(jobs.getLuong());
-            txtDate.setText(jobs.getNgaydang());
         }
         return convertView;
     }

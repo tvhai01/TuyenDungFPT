@@ -17,14 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".SearchActiviry">
-
         </activity>
-
         <activity
             android:name=".WebviewActivity">
         </activity>
         <activity
             android:name=".ListViewDSActivity">
+        </activity>
+        <activity
+            android:name=".ListViewDSHotActivity">
         </activity>
     </application>
 

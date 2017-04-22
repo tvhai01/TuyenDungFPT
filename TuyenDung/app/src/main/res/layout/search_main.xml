@@ -146,6 +146,16 @@
                 android:textSize="20sp"
                 android:onClick="disconnectButtonClicked"
                 android:text="Search" />
+            <Button
+                android:id="@+id/btnHot"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_select"
+                android:textColor="@color/background"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:onClick="disconnectButtonClicked"
+                android:text="Hot" />
         </LinearLayout>
 
 

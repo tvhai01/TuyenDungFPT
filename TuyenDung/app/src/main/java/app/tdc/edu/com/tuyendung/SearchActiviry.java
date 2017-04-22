@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +52,7 @@ public class SearchActiviry extends Activity{
         setContentView(R.layout.search_main);
 
         Button btnSearch = (Button)findViewById(R.id.btnSearch);
+        Button btnHot = (Button)findViewById(R.id.btnHot);
         final AutoCompleteTextView edtTenViecLam = (AutoCompleteTextView) findViewById(R.id.edtNganhNghe);
         final AutoCompleteTextView edtChucDanh = (AutoCompleteTextView) findViewById(R.id.editChucDanh);
         final AutoCompleteTextView edtTenTP = (AutoCompleteTextView) findViewById(R.id.edtDiaDiem);
@@ -137,7 +140,17 @@ public class SearchActiviry extends Activity{
 
                 // Log.d("testTP",tenVLChon);
                 // Log.d("testVL",tenTPChon);
+                if(TextUtils.isEmpty(tenVLChon)) {
+                    edtTenViecLam.setError("chưa nhập");
+                    edtTenTP.setError("chưa nhập");
+                    return;
+                }
 
+                if(tenTPChon == null && tenVLChon == null && tenTPChon.equals("")){
+                    Toast.makeText(getApplicationContext(),"Dữ liệu Trống , hãy nhập lại",
+                            Toast.LENGTH_LONG).show();
+
+                }
                 if (hmThanhPho.containsKey(tenTPChon))
                     keyThanhPho = hmThanhPho.get(tenTPChon);
                 if (hmViecLam.containsKey(tenVLChon))
@@ -168,6 +181,13 @@ public class SearchActiviry extends Activity{
                 return url;
             }
 
+        });
+        btnHot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActiviry.this,ListViewDSHotActivity.class);
+                startActivity(intent);
+            }
         });
     }
 

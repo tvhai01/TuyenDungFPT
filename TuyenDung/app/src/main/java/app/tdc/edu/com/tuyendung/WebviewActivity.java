@@ -45,8 +45,8 @@ public class WebviewActivity extends Activity {
             Bundle bundle = intent.getBundleExtra("dataLink");
             if (bundle != null) {
                 link = bundle.getString("link");
-                Toast.makeText(getApplicationContext(), link,
-                Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), link,
+//                Toast.LENGTH_LONG).show();
                 Log.d("web", link+"");
             }
 
