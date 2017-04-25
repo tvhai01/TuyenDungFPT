@@ -49,6 +49,7 @@ public class ListViewDSActivity extends Activity {
         });
 
     }
+    //lay duong dan
     void getAndUpdateLink() {
         Intent intent = getIntent();
         // Log.d("intent", "intent " + intent);
@@ -64,6 +65,7 @@ public class ListViewDSActivity extends Activity {
             }
         }
     }
+    //loadding
     private class _JSOUP extends AsyncTask<Void, Integer, ArrayList<ThuocTinh>> {
         ProgressDialog dialog;
 
@@ -77,7 +79,7 @@ public class ListViewDSActivity extends Activity {
             dialog.show();
 
         }
-
+        //khai bao duong dan html
         @Override
         protected ArrayList<ThuocTinh> doInBackground(Void... arg0) {
             questions = new ArrayList<ThuocTinh>();
@@ -120,7 +122,7 @@ public class ListViewDSActivity extends Activity {
         protected void onPostExecute(ArrayList<ThuocTinh> result) {
 
             super.onPostExecute(result);
-            Log.d("HaiDong", result.size()+"");
+            Log.d("Hai", result.size()+"");
 
             lvDanhSach = (ListView) findViewById(R.id.lvdanhsach);
             adapter = new MyAdapter(ListViewDSActivity.this,

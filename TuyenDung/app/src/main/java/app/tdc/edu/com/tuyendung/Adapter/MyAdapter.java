@@ -50,7 +50,7 @@ public class MyAdapter extends ArrayAdapter {
 
         if (jobs != null) {
 
-//            Log.d("HaiDong", jobs.getTieude().toString());
+//            Log.d("Hai", jobs.getTieude().toString());
 
             txtTenCV.setText(jobs.getTieude());
             txtTenCTy.setText(jobs.getCongty());

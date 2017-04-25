@@ -48,9 +48,13 @@ public class SplashScreenActivity extends Activity {
         final TextView txtRemove = (TextView) findViewById(R.id.txtRemove);
         final TextView txtControl = (TextView) findViewById(R.id.txtControl);
         final TextView txtEnd = (TextView) findViewById(R.id.txtend);
+        // chuyen dong ben phai
         final Animation slideright = AnimationUtils.loadAnimation(SplashScreenActivity.this,R.anim.slider_right);
+        // chuyen dong ben trai
         final Animation slideleft = AnimationUtils.loadAnimation(SplashScreenActivity.this,R.anim.slider_left);
+        // chuyen dong lên icon
         Animation slideup = AnimationUtils.loadAnimation(SplashScreenActivity.this,R.anim.slider_up);
+        // chuyen dong len chu
         final Animation slideup2 = AnimationUtils.loadAnimation(SplashScreenActivity.this,R.anim.slider_up);
 
         txtControl.setVisibility(View.INVISIBLE);
@@ -65,7 +69,9 @@ public class SplashScreenActivity extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                //chuyen dong tu ben trai
                 txtRemove.startAnimation(slideleft);
+                //hien len
                 txtRemove.setVisibility(View.VISIBLE);
                 txtControl.startAnimation(slideright);
                 txtControl.setVisibility(View.VISIBLE);
@@ -96,6 +102,7 @@ public class SplashScreenActivity extends Activity {
 
         goNextActivity();
     }
+    //chuyen layout
     public void goNextActivity(){
         handler.postDelayed(new Runnable() {
             @Override

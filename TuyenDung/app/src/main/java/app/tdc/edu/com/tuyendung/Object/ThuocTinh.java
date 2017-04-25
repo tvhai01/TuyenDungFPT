@@ -1,8 +1,6 @@
 package app.tdc.edu.com.tuyendung.Object;
 
-/**
- * Created by Việt Hải on 4/11/2017.
- */
+
 
 public class ThuocTinh {
     private String tieude, congty, diadiem,luong, ngaydang,link ;

@@ -70,8 +70,8 @@
                 android:background="@color/form"
                 android:hint="@string/chucdanh"
                 android:inputType="textPersonName"
-                android:textSize="23dp"
-                android:textStyle="italic|normal" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,8 +100,8 @@
                 android:hint="@string/nganhnghe"
                 android:paddingTop="10dp"
                 android:inputType="textPersonName"
-                android:textSize="23dp"
-                android:textStyle="italic|normal" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
         </LinearLayout>
         // tìm kiếm theo thanh pho , có trang chi tiết cho search
 
@@ -128,8 +128,8 @@
                 android:hint="@string/diadiem"
                 android:paddingTop="10dp"
                 android:inputType="textPersonName"
-                android:textSize="23dp"
-                android:textStyle="italic|normal" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
         </LinearLayout>
         <LinearLayout
             android:gravity="center"
@@ -153,9 +153,9 @@
                 android:background="@drawable/button_select"
                 android:textColor="@color/background"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:onClick="disconnectButtonClicked"
-                android:text="Hot" />
+                android:textSize="20sp"
+                android:text="News Hot" />
         </LinearLayout>
 
 

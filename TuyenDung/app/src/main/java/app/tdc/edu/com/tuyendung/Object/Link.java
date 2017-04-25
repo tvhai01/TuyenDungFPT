@@ -1,9 +1,6 @@
 package app.tdc.edu.com.tuyendung.Object;
 
-/**
- * Created by Việt Hải on 4/11/2017.
- */
-
+//tao thuoc tinh link
 public class Link {
     String  Link;
 
@@ -11,7 +8,7 @@ public class Link {
         super();
         Link = link;
     }
-
+    //tao thuoc tinh get set
     @Override
     public String toString() {
         return   Link ;

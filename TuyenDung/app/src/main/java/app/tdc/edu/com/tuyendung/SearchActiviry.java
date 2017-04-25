@@ -25,9 +25,7 @@ import java.util.HashMap;
 import app.tdc.edu.com.tuyendung.Adapter.MyAdapter;
 import app.tdc.edu.com.tuyendung.Object.Link;
 
-/**
- * Created by Việt Hải on 4/12/2017.
- */
+
 
 public class SearchActiviry extends Activity{
     static ArrayList<Link> link = new ArrayList<Link>();
@@ -59,13 +57,13 @@ public class SearchActiviry extends Activity{
 
         txtNameOne = (TextView) findViewById(R.id.textView6);
         txtNameTwo = (TextView) findViewById(R.id.textView7);
-
+        //hieu ung chuyen dong animation title
         Animation slideright = AnimationUtils.loadAnimation(SearchActiviry.this,R.anim.slider_right);
         Animation slideleft = AnimationUtils.loadAnimation(SearchActiviry.this,R.anim.slider_left);
 
         txtNameTwo.startAnimation(slideright);
         txtNameOne.startAnimation(slideleft);
-
+        //edit ten viec lam
         edtTenViecLam
                 .setOnEditorActionListener(new EditText.OnEditorActionListener() {
 
@@ -84,7 +82,7 @@ public class SearchActiviry extends Activity{
                         // TODO Auto-generated method stub
                     }
                 });
-
+        //edt ten thanh pho
         edtTenTP.setOnEditorActionListener(new EditText.OnEditorActionListener() {
 
             @Override
@@ -102,7 +100,7 @@ public class SearchActiviry extends Activity{
                 // TODO Auto-generated method stub
             }
         });
-        // Ten Viec Lam
+        // Ten Viec Lam , goi cac item o file string len
         String[] TenVL = getResources().getStringArray(R.array.TenViecLam);
         // Create thenadapter and set it to the AutoCompleteTextView
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -111,7 +109,7 @@ public class SearchActiviry extends Activity{
         String[] KeyTenVL = getResources()
                 .getStringArray(R.array.KeyTenViecLam);
 
-        // Ten Thanh Pho
+        // Ten Thanh Pho , goi cac item o file string len
         String[] TenTP = getResources().getStringArray(R.array.TenThanhPho);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, TenTP);
@@ -129,7 +127,7 @@ public class SearchActiviry extends Activity{
             hmViecLam.put(TenVL[i], KeyTenVL[i]);
         }
         final Bundle bundle = new Bundle();
-
+        //btn search
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,17 +138,13 @@ public class SearchActiviry extends Activity{
 
                 // Log.d("testTP",tenVLChon);
                 // Log.d("testVL",tenTPChon);
+                // bat loi textedit
                 if(TextUtils.isEmpty(tenVLChon)) {
                     edtTenViecLam.setError("chưa nhập");
                     edtTenTP.setError("chưa nhập");
                     return;
                 }
 
-                if(tenTPChon == null && tenVLChon == null && tenTPChon.equals("")){
-                    Toast.makeText(getApplicationContext(),"Dữ liệu Trống , hãy nhập lại",
-                            Toast.LENGTH_LONG).show();
-
-                }
                 if (hmThanhPho.containsKey(tenTPChon))
                     keyThanhPho = hmThanhPho.get(tenTPChon);
                 if (hmViecLam.containsKey(tenVLChon))
@@ -162,18 +156,18 @@ public class SearchActiviry extends Activity{
 
                 Intent intent = new Intent(SearchActiviry.this,
                         ListViewDSActivity.class);
-
+                //lay link ghep buiurl
                 bundle.putString("link", buiurl() + "");
                 Log.d("aaa", bundle + "");
-
+                //lay du lieu
                 intent.putExtra("data", bundle);
                 Log.d("aaa", bundle + "");
-
+                //bat dau chuyen layout
                 startActivity(intent);
                 finish();
 
             }
-
+            //ghep chuoi
             private String buiurl() {
                 String url = strUrl + Url1 + keyViecLam + Url2 + keyThanhPho
                         + Url3;
@@ -198,6 +192,7 @@ public class SearchActiviry extends Activity{
         super.onBackPressed();
     }
 
+    //hoi khi thoat
     public void outApp(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

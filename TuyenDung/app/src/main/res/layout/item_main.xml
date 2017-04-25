@@ -18,27 +18,38 @@
             android:text="Tiêu Đề"
             android:textColor="@color/hot"
             android:textSize="15dp"
-            android:textStyle="italic|bold" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/company"/>
             <TextView
                 android:id="@+id/txtCongTy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingBottom="10sp"
                 android:text="Tên Công ty"
-                android:textSize="13dp"
-                android:textStyle="italic" />
-
+                android:textSize="13dp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/mapsearch"/>
             <TextView
                 android:id="@+id/txtDiaDiem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingBottom="10sp"
+                android:layout_gravity="center"
                 android:hint="Địa Điểm"
                 android:textSize="13dp"
                  />
@@ -47,21 +58,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dolla"/>
             <TextView
                 android:id="@+id/txtLuong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:hint="Lương"
+                android:paddingBottom="10sp"
                 android:textColor="@color/wanring"
                 android:textSize="12dp"
-                android:textStyle="italic|bold" />
-
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/time"/>
             <TextView
                 android:id="@+id/txtThoiGian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10sp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:hint="Thời gian"
                 android:textSize="11dp" />

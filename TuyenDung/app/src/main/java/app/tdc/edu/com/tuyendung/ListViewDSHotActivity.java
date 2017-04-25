@@ -116,7 +116,7 @@ public class ListViewDSHotActivity extends Activity {
         protected void onPostExecute(ArrayList<ThuocTinhHot> result) {
 
             super.onPostExecute(result);
-            Log.d("HaiDong", result.size()+"");
+            Log.d("Hai", result.size()+"");
 
             lvDanhSach = (ListView) findViewById(R.id.lvdanhsach);
             adapter = new MyAdapterHot(ListViewDSHotActivity.this,
